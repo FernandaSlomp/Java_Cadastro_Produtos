@@ -1,0 +1,10 @@
+@startuml 
+actor user 
+participant backend
+database datastore
+
+user --> backend : send hhtps request get 
+
+
+
+@enduml
