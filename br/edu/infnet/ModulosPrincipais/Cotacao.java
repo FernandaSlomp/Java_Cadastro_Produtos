@@ -1,69 +1,51 @@
 package br.edu.infnet.ModulosPrincipais;
 
 public class Cotacao {
-	private int idCotacao;
-	private String nomeEmpresa;
+	private String idProduto;
 	private String nomeProduto;
-	private float precoProduto;
-	
+	private double precoProduto;
 
-	//Construtores
 
 	public Cotacao() {
 		super();
+	} 
+	
+	public Cotacao(String idProduto, String nomeProduto, double precoProduto) {
+		this.idProduto = idProduto;
+		this.nomeProduto = nomeProduto;
+		this.precoProduto = precoProduto;
 	}
 
-	public Cotacao(int idCotacao, String nomeEmpresa, String nomeProduto) {
-		this.idCotacao = idCotacao
-;
-		this.nomeEmpresa = nomeEmpresa
-;
-		this.nomeProduto
- = nomeProduto
-;
+	public String getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(String idProduto) {
+		this.idProduto = idProduto;
+	}
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
+
+	public double getPrecoProduto() {
+		return precoProduto;
+	}
+
+	public void setPrecoProduto(double precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 
 	
-
-	//getres e setters
-	public int getidCotacao() {
-		return idCotacao
-;
-	}
-
-	public void setidCotacao(int idCotacao) {
-		this.idCotacao
- = idCotacao
-;
-	}
-
-	public String getnomeEmpresa() {
-		return nomeEmpresa
-;
-	}
-
-	public void setnomeEmpresa(String nomeEmpresa) {
-		this.nomeEmpresa
- = nomeEmpresa
-;
-	}
-
-	public String getnomeProduto() {
-		return nomeProduto
-;
-	}
-
-	public void setnomeProduto(String nomeProduto) {
-		this.nomeProduto
- = nomeProduto
-;
-	}
-
 	public String imprimir(){
-		return "Nome: " + nomeEmpresa
- + "Data de Validade: " + nomeProduto;
+		return "Nome: " + nomeProduto + "Preço do Produto: " + precoProduto;
 
 	}
 
+	
 
 }
