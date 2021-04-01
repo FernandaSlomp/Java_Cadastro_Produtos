@@ -1,15 +1,12 @@
-package br.edu.infnet.Main;
-
-import java.util.Scanner;
-
-import br.edu.infnet.Erros.MenuException;
-import br.edu.infnet.ModulosPrincipais.Produto;
-import br.edu.infnet.Repositorio.RepositorioProduto;
+package src.br.edu.infnet.Main;
 
 import java.io.IOException;
-import java.util.*;
-
 import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import src.br.edu.infnet.Erros.MenuException;
+import src.br.edu.infnet.ModulosPrincipais.Produto;
+import src.br.edu.infnet.Repositorio.RepositorioProduto;
 
 // import java
 
