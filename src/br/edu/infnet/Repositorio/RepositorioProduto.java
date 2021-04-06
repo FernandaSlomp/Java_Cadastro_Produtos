@@ -1,9 +1,9 @@
-package br.edu.infnet.Repositorio;
+package src.br.edu.infnet.Repositorio;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.edu.infnet.ModulosPrincipais.Produto;
+import src.br.edu.infnet.ModulosPrincipais.Produto;
 
 public class RepositorioProduto{
 	
@@ -24,7 +24,7 @@ public class RepositorioProduto{
 		for (Produto p :  listaProdutos){
 
 			if (p.getNomeProduto().equalsIgnoreCase(nomeProd)){
-				name = p;
+				name = nomeProd;
 			}
 		}
 
@@ -46,7 +46,7 @@ public class RepositorioProduto{
 	public static int numeroAtual(){
 		int total = 0;
 	
-		total = listaProdutos.size() -1;
+		total = listaProdutos.size();
 	
 		return total;
 	  }
@@ -62,9 +62,6 @@ public class RepositorioProduto{
 				System.out.println("Digite o nome do novo produto: ");
 				String newNome = scan.nextLine();
 				p.setNomeProduto(newNome);
-				System.out.println("Digite a nova data de validade: ");
-				String newValidade= scan.nextLine();
-				p.setDataDeValidade(newValidade);
 				
 				return true;
 			}
