@@ -1,14 +1,22 @@
-package br.edu.infnet.Erros;
+package src.br.edu.infnet.Erros;
 
 import java.io.IOException;
 
 
 public class MenuException extends Exception {
 	
-  public MenuException(String mensagem){
-    super(mensagem);
+  /**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 
-  };
+public MenuException(String mensagem){
+  super(mensagem);
+ };
+
+ // public String getMessage(){
+   // return "Nenhum registro encontrado!";
+//  }
 
 
 }

@@ -1,7 +1,7 @@
-package br.edu.infnet.ModulosPrincipais;
+package src.br.edu.infnet.ModulosPrincipais;
 
 public class Cotacao {
-	private String idProduto;
+	private int idCotacao;
 	private String nomeProduto;
 	private double precoProduto;
 
@@ -10,18 +10,20 @@ public class Cotacao {
 		super();
 	} 
 	
-	public Cotacao(String idProduto, String nomeProduto, double precoProduto) {
-		this.idProduto = idProduto;
+	public Cotacao(int idCotacao, String nomeProduto, double precoProduto) {
+		this.idCotacao = idCotacao;
 		this.nomeProduto = nomeProduto;
 		this.precoProduto = precoProduto;
 	}
 
-	public String getIdProduto() {
-		return idProduto;
+	public int getidCotacao() {
+		return idCotacao
+;
 	}
 
-	public void setIdProduto(String idProduto) {
-		this.idProduto = idProduto;
+	public void setidCotacao(int idCotacao) {
+		this.idCotacao = idCotacao
+;
 	}
 
 	public String getNomeProduto() {
@@ -42,7 +44,12 @@ public class Cotacao {
 
 	
 	public String imprimir(){
-		return "Nome: " + nomeProduto + "Preço do Produto: " + precoProduto;
+		return 
+		
+		"Nome do Produto: " + nomeProduto + String.format(" Preço: R$ %.2f", precoProduto);
+		
+		
+		//"Nome: " + nomeProduto + " Preço do Produto: R$ %.2f" + precoProduto;
 
 	}
 

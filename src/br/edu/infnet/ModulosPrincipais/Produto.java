@@ -1,21 +1,23 @@
-package br.edu.infnet.ModulosPrincipais;
+package src.br.edu.infnet.ModulosPrincipais;
+
+import java.util.Date;
 
 public class Produto {
 	private int idProduto;
 	private String nomeProduto;
-	private String dataDeValidade;
+	private Date dataDeValidade;
 	
 
 	//Construtores
 
 	public Produto() {
-		super();
+		
 	}
 
-	public Produto(int idProduto, String nomeProduto, String dataDeValidade) {
+	public Produto(int idProduto, String nomeProduto, Date dt) {
 		this.idProduto = idProduto;
 		this.nomeProduto = nomeProduto;
-		this.dataDeValidade = dataDeValidade;
+		this.dataDeValidade = dt;
 	}
 
 	
@@ -37,7 +39,7 @@ public class Produto {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public String getDataDeValidade() {
+	public Date getDataDeValidade() {
 		return dataDeValidade;
 	}
 
