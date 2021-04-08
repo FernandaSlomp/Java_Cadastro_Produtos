@@ -42,7 +42,7 @@ public class ProdCota implements Comparable<ProdCota>{
 
 	public String consultarSituacao(){
 
-		return "Nome do Produto: " + getNomeProdutoCota() + " Data de validade: " + getDataDeValidadeCota() + String.format(" Preço: R$ %.2f", precoProdutoCota) + " id: " + getIdProdCota() +  "\n";
+		return "Nome do Produto: " + getNomeProdutoCota() + " Data de inserção no banco: " + getDataDeValidadeCota() + String.format(" Preço: R$ %.2f", precoProdutoCota) + " id: " + getIdProdCota() +  "\n";
 	   
 	
 	  }
