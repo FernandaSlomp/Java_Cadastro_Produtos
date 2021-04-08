@@ -14,9 +14,9 @@ public MenuException(String mensagem){
   super(mensagem);
  };
 
- // public String getMessage(){
-   // return "Nenhum registro encontrado!";
-//  }
+  public String getMessage(){
+ 	return "Nenhum registro encontrado!";
+  }
 
 
 }

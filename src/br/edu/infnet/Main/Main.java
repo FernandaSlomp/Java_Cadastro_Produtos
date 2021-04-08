@@ -3,9 +3,7 @@ import java.text.SimpleDateFormat;
 
 
 import java.io.IOException;
-import java.text.BreakIterator;
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -110,7 +108,7 @@ class Main {
 			  System.out.println("Devem ser digitados números inteiros.");
 			  
 			}catch (NullPointerException ex2) {
-			  System.out.println("erro: ");
+			  System.out.println("erro: " + ex2);
 			}
 			catch (Exception e) {
 				  System.out.println("Error.");
@@ -230,14 +228,24 @@ class Main {
 		  
 			break;
 
-		case 8 : 
+		case 8: 
+		System.out.println("Digite o código informado no registro do produto com cotação:  ");
+		int x = scan.nextInt();
+		System.out.println( RepositorioPC.pesquisarProdCota(x));
+			
+			break;
+
+		case 9:
+		System.out.println(RepositorioPC.pesquisar2()); 
+		break;
+		case 10 : 
           break;
 
           default:
           //throw new MenuException("Opçao de Menu invalida");
           
       }
-    } while(menu != 8);
+    } while(menu != 10);
 
   } catch (InputMismatchException ex2) {
     System.out.println(ex2.getMessage());
@@ -253,13 +261,15 @@ class Main {
     System.out.println("========== Escolha ======");
     System.out.println("[1] Registrar Produto.");
 	System.out.println("[2] Registrar cotação por produto.");
-    System.out.println("[3] Consultar cotações.");
+    System.out.println("[3] Lista de cotações.");
     System.out.println("[4] Editar produto cadastrado");
 	System.out.println("[5] Gerar lista de produtos com cotação!");
 	System.out.println("Atenção! Só selecione as opções abaixo caso tenha criado a lista - opção 5!");
 	System.out.println("[6] Exibir todos os produtos com cotação");
 	System.out.println("[7] Excluir produto cadastrado com cotação.");
-    System.out.println("[8] Sair.");
+	System.out.println("[8] Buscar produto cotado pelo seu ID");
+	System.out.println("[9] Listar produtos com cotação com o preço maior que 100");
+    System.out.println("[10] Sair.");
     System.out.println("=========================");
 
   }

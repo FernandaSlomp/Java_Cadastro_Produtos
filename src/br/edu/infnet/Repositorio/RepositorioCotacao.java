@@ -39,4 +39,6 @@ public class RepositorioCotacao {
 		return saida;
 	  }
 
+	 
+
 }

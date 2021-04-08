@@ -84,7 +84,6 @@ public class ProdCota implements Comparable<ProdCota>{
         return this.getIdProdCota() - prodCota.getIdProdCota();
     }
 	
-
-
+	
 	
 }
