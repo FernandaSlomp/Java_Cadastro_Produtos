@@ -34,7 +34,7 @@ class Main {
    	Cotacao objCotacao;
 	ProdCota objProdCota; 
     String nomeProduto, nomeProdutoCota;
-	Date dataDeValidadeCota;
+	Date dataDeInclusao;
     int idProduto, idCotacao, idProdCota;
 	double precoProduto, precoProdutoCota;
 
@@ -172,8 +172,8 @@ class Main {
 				if (c.getNomeProduto().equals(p.getNomeProduto())){
 
 					idProdCota =  p.getIdProduto();
-					dataDeValidadeCota = p.getDataDeValidade();
-					objProdCota = new ProdCota(nomeProdutoCota, dataDeValidadeCota, precoProdutoCota, idProdCota );
+					dataDeInclusao = p.getDataDeInclusao();
+					objProdCota = new ProdCota(nomeProdutoCota, dataDeInclusao, precoProdutoCota, idProdCota );
 					RepositorioPC.addProdCota(objProdCota);
 					System.out.println("LISTA CRIADA!");
 				}
