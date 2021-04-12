@@ -1,9 +1,11 @@
 package src.br.edu.infnet.Repositorio;
 
+
 import java.util.ArrayList;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import src.br.edu.infnet.Erros.MenuException;
 import src.br.edu.infnet.ModulosPrincipais.ProdCota;
 
 public class RepositorioPC {
@@ -46,11 +48,34 @@ public class RepositorioPC {
 		return false;
 	}
 
-	public static SortedSet<ProdCota> getListaProdCotas() {
+	public static SortedSet<ProdCota> getListaProdCotas()  {
 		return listaProdCotas;
 	}
 
+	static public String pesquisarProdCota(int idProd) throws MenuException {
+		try{
+		for (ProdCota p :  listaProdCotas){
 
+			if (p.getIdProdCota() == idProd){
+				return p.consultarSituacao();
+		
+			}
+		}
+	} catch (NullPointerException x){
+		System.out.println(x);
+		
+	}
+		return null;
 
+	}
+
+	static public String pesquisar2(){
+		for (ProdCota p : listaProdCotas){
+			if (p.getPrecoProdutoCota() >= 100){
+				return p.consultarSituacao();
+			}
+		}
+		return null;
+	}
 	
 }

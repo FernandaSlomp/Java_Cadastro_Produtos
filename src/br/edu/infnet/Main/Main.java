@@ -3,9 +3,7 @@ import java.text.SimpleDateFormat;
 
 
 import java.io.IOException;
-import java.text.BreakIterator;
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -34,7 +32,7 @@ class Main {
    	Cotacao objCotacao;
 	ProdCota objProdCota; 
     String nomeProduto, nomeProdutoCota;
-	Date dataDeValidadeCota;
+	Date dataDeInclusao;
     int idProduto, idCotacao, idProdCota;
 	double precoProduto, precoProdutoCota;
 
@@ -110,7 +108,7 @@ class Main {
 			  System.out.println("Devem ser digitados números inteiros.");
 			  
 			}catch (NullPointerException ex2) {
-			  System.out.println("erro: ");
+			  System.out.println("erro: " + ex2);
 			}
 			catch (Exception e) {
 				  System.out.println("Error.");
@@ -123,35 +121,22 @@ class Main {
 			break;
         
         case 3 : 
-        try {
-        System.out.println("Digite o nome ID que você quer excluir: "); 
-			int idProd = scan2.nextInt();
+		System.out.println("Listagem das cotação: ");
 
-			if( ! RepositorioPC.getListaProdCotas().isEmpty()){
-				if( RepositorioPC.excluirProdCota(idProd) ){
-					System.out.println("Produto removido!");
+		try {
+		if (RepositorioCotacao.listar().length() <= 0 ){
+			throw new MenuException("Nenhum registro encontrado!");
+		}else {
+						
+			System.out.println(RepositorioCotacao.listar());	
 
-				}else {
-					System.out.println("ID não encontrado");
-				}
+		}
+		}	catch (MenuException c) {
+			System.out.println(c);
 
-			}else {
-				System.out.println("Não existem produtos adicionados ");
-			}
+		}
+		break;
         
-        
-        }
-        catch (Exception exc){
-        System.out.println("Codigo invalido");
-        System.out.println(exc.getMessage());
-
-        } catch (Throwable e) {
-          System.out.println("Erro genérico");
-        } finally {
-          System.out.println("FIM");
-        }
-	  
-        break;
 
 		case 4 :
 
@@ -185,16 +170,13 @@ class Main {
 				if (c.getNomeProduto().equals(p.getNomeProduto())){
 
 					idProdCota =  p.getIdProduto();
-					dataDeValidadeCota = p.getDataDeValidade();
-					objProdCota = new ProdCota(nomeProdutoCota, dataDeValidadeCota, precoProdutoCota, idProdCota );
+					dataDeInclusao = p.getDataDeInclusao();
+					objProdCota = new ProdCota(nomeProdutoCota, dataDeInclusao, precoProdutoCota, idProdCota );
 					RepositorioPC.addProdCota(objProdCota);
-					
-					
+					System.out.println("LISTA CRIADA!");
 				}
 			}
 		}
-			
-
 			break;
 		
 		case 6: 
@@ -216,31 +198,54 @@ class Main {
 		
 		break; 
         case 7:
-
-		System.out.println("Listagem das cotação: ");
-
 		try {
-		if (RepositorioCotacao.listar().length() <= 0 ){
-			throw new MenuException("Nenhum registro encontrado!");
-		}else {
-						
-			System.out.println(RepositorioCotacao.listar());	
+			System.out.println("Digite o nome ID que você quer excluir: "); 
+				int idProd = scan2.nextInt();
+	
+				if( ! RepositorioPC.getListaProdCotas().isEmpty()){
+					if( RepositorioPC.excluirProdCota(idProd) ){
+						System.out.println("Produto removido!");
+	
+					}else {
+						System.out.println("ID não encontrado");
+					}
+	
+				}else {
+					System.out.println("Não existem produtos adicionados ");
+				}
+			
+			
+			}
+			catch (Exception exc){
+			System.out.println("Codigo invalido");
+			System.out.println(exc.getMessage());
+	
+			} catch (Throwable e) {
+			  System.out.println("Erro genérico");
+			} finally {
+			  System.out.println("FIM");
+			}
+		  
+			break;
 
-		}
-		}	catch (MenuException c) {
-			System.out.println(c);
+		case 8: 
+		System.out.println("Digite o código informado no registro do produto com cotação:  ");
+		int x = scan.nextInt();
+		System.out.println( RepositorioPC.pesquisarProdCota(x));
+			
+			break;
 
-		}
-
+		case 9:
+		System.out.println(RepositorioPC.pesquisar2()); 
 		break;
-		case 8 : 
+		case 10 : 
           break;
 
           default:
           //throw new MenuException("Opçao de Menu invalida");
           
       }
-    } while(menu != 8);
+    } while(menu != 10);
 
   } catch (InputMismatchException ex2) {
     System.out.println(ex2.getMessage());
@@ -256,12 +261,15 @@ class Main {
     System.out.println("========== Escolha ======");
     System.out.println("[1] Registrar Produto.");
 	System.out.println("[2] Registrar cotação por produto.");
-    System.out.println("[3] Excluir produto cadastrado com cotação.");
+    System.out.println("[3] Lista de cotações.");
     System.out.println("[4] Editar produto cadastrado");
 	System.out.println("[5] Gerar lista de produtos com cotação!");
+	System.out.println("Atenção! Só selecione as opções abaixo caso tenha criado a lista - opção 5!");
 	System.out.println("[6] Exibir todos os produtos com cotação");
-    System.out.println("[7] Consultar cotações");
-    System.out.println("[8] Sair.");
+	System.out.println("[7] Excluir produto cadastrado com cotação.");
+	System.out.println("[8] Buscar produto cotado pelo seu ID");
+	System.out.println("[9] Listar produtos com cotação com o preço maior que 100");
+    System.out.println("[10] Sair.");
     System.out.println("=========================");
 
   }

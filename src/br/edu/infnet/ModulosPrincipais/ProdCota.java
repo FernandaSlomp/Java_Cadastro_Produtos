@@ -7,7 +7,7 @@ public class ProdCota implements Comparable<ProdCota>{
 	//private Date dataDeValidade;
 	private Double precoProdutoCota;
 	private int idProdCota;
-	private Date dataDeValidadeCota;
+	private Date dataDeInclusaoCota;
 
 
 	public String getNomeProdutoCota() {
@@ -20,13 +20,13 @@ public class ProdCota implements Comparable<ProdCota>{
 	}
 
 
-	public Date getDataDeValidadeCota() {
-		return dataDeValidadeCota;
+	public Date getDataDeInclusaoCota() {
+		return dataDeInclusaoCota;
 	}
 
 
-	public void setDataDeValidadeCota(Date dataDeValidadeCota) {
-		this.dataDeValidadeCota = dataDeValidadeCota;
+	public void setDataDeInclusaoCota(Date dataDeInclusaoCota) {
+		this.dataDeInclusaoCota = dataDeInclusaoCota;
 	}
 
 
@@ -42,15 +42,15 @@ public class ProdCota implements Comparable<ProdCota>{
 
 	public String consultarSituacao(){
 
-		return "Nome do Produto: " + getNomeProdutoCota() + " Data de validade: " + getDataDeValidadeCota() + String.format(" Preço: R$ %.2f", precoProdutoCota) + " id: " + getIdProdCota() +  "\n";
+		return "Nome do Produto: " + getNomeProdutoCota() + " Data de inserção no banco: " + getDataDeInclusaoCota() + String.format(" Preço: R$ %.2f", precoProdutoCota) + " id: " + getIdProdCota() +  "\n";
 	   
 	
 	  }
 
 
-	public ProdCota(String nomeProdutoCota, Date dataDeValidadeCota, Double precoProdutoCota, int idProdCota) {
+	public ProdCota(String nomeProdutoCota, Date dataDeInclusaoCota, Double precoProdutoCota, int idProdCota) {
 		this.nomeProdutoCota = nomeProdutoCota;
-		this.dataDeValidadeCota = dataDeValidadeCota;
+		this.dataDeInclusaoCota = dataDeInclusaoCota;
 		this.precoProdutoCota = precoProdutoCota;
 		this.idProdCota = idProdCota;
 	}
@@ -84,7 +84,6 @@ public class ProdCota implements Comparable<ProdCota>{
         return this.getIdProdCota() - prodCota.getIdProdCota();
     }
 	
-
-
+	
 	
 }

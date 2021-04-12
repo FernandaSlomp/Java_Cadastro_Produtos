@@ -5,7 +5,7 @@ import java.util.Date;
 public class Produto {
 	private int idProduto;
 	private String nomeProduto;
-	private Date dataDeValidade;
+	private Date dataDeInclusao;
 	
 
 	//Construtores
@@ -17,7 +17,7 @@ public class Produto {
 	public Produto(int idProduto, String nomeProduto, Date dt) {
 		this.idProduto = idProduto;
 		this.nomeProduto = nomeProduto;
-		this.dataDeValidade = dt;
+		this.dataDeInclusao = dt;
 	}
 
 	
@@ -39,16 +39,16 @@ public class Produto {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public Date getDataDeValidade() {
-		return dataDeValidade;
+	public Date getDataDeInclusao() {
+		return dataDeInclusao;
 	}
 
-	public void setDataDeValidade(String dataDeValidade) {
-		this.dataDeValidade = dataDeValidade;
+	public void setDataDeInclusao(String dataDeInclusao) {
+		this.dataDeInclusao = dataDeInclusao;
 	}
 
 	public String imprimir(){
-		return "Nome: " + nomeProduto + "Data de Validade: " + dataDeValidade;
+		return "Nome: " + nomeProduto + "Data de Validade: " + dataDeInclusao;
 
 	}
 
