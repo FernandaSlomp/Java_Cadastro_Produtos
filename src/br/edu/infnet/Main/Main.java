@@ -260,7 +260,7 @@ class Main {
   static void ExibirMenu(){
     System.out.println("========== Escolha ======");
     System.out.println("[1] Registrar Produto.");
-	System.out.println("[2] Registrar cotação por produto.");
+	System.out.println("[2] Registrar cotação");
     System.out.println("[3] Lista de cotações.");
     System.out.println("[4] Editar produto cadastrado");
 	System.out.println("[5] Gerar lista de produtos com cotação!");
